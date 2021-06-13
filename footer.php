@@ -11,20 +11,22 @@
       <div class="col_half">
         <?php echo get_theme_mod('ju_footer_copyright_text'); ?><br>
         <div class="copyright-links">
-          <?php
 
+        <?php if ( get_theme_mod('ju_report_file') ) { ?>
+          
+          <a href="<?php echo get_theme_mod('ju_report_file'); ?>"> <?php _e(' Download Report ', 'julia' ) ?>   </a><br>
+          
+        <?php } ?>
+
+          <?php
           if (get_theme_mod('ju_footer_tos_page')) {
           ?>
             <a href="<?php the_permalink(get_theme_mod('ju_footer_tos_page')); ?>">Page TOS</a>
-
-
           <?php
           }
-
           ?>
 
           <?php
-
           if (get_theme_mod('ju_footer_privacy_page')) {
           ?>
             <a href="<?php the_permalink(get_theme_mod('ju_footer_privacy_page')); ?> ">Privacy Policy</a>
@@ -34,12 +36,6 @@
           }
 
           ?>
-
-
-
-
-
-
         </div>
       </div>
 

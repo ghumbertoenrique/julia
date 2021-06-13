@@ -18,6 +18,12 @@ function ju_enqueue(){
     wp_register_style('ju_magnific_popup', $uri.'/assets/css/bomagnific-popupotstrap.css', [], $ver);
     wp_register_style('ju_responsive', $uri.'/assets/css/responsive.css', [], $ver);
     wp_register_style('ju_custom', $uri.'/assets/css/custom.css', [], $ver);
+    
+    $read_more_color            =   get_theme_mod('ju_read_more_color');
+    wp_add_inline_style(
+        'ju_custom', 
+        'a.more-link { color:'.$read_more_color. '; border-color:'.$read_more_color. ';}' 
+    );
 
     wp_enqueue_style('ju_google_fonts');
     wp_enqueue_style('ju_bootstrap');
@@ -35,6 +41,7 @@ function ju_enqueue(){
     wp_enqueue_script('jquery');
     wp_enqueue_script('ju_plugins');
     wp_enqueue_script('ju_functions');
+
 
 
 
