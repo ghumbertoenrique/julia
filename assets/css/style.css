@@ -691,7 +691,7 @@ body.stretched .container-fullwidth {
 html[xmlns] .slider-wrap {display: block;}
 * html .slider-wrap {height: 1%;}
 
-.no-js .slider-wrap > .slide:first-child {display: block;}
+.slider-wrap > .slide:first-child {display: block;}
 
 .flex-viewport {
 	max-height: 2000px;

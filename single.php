@@ -14,18 +14,18 @@
           ============================================= -->
             <div class="postcontent nobottommargin clearfix">
 
-                <div class="single-post nobottommargin">
+                <?php
 
-                    <?php
+                if (have_posts()) {
+                    while (have_posts()) {
+                        the_post();
+                        global $post;
+                        $author_ID          =   $post->post_author;
+                        $author_URL         =   get_author_posts_url($author_ID);
+                ?>
 
-                    if (have_posts()) {
-                        while (have_posts()) {
-                            the_post();
-                            global $post;
-                            $author_ID          =   $post->post_author;
-                            $author_URL         =   get_author_posts_url($author_ID);
-                    ?>
 
+                        <div id="post-<?php the_ID() ?>" <?php post_class( 'single-post nobottommargin' ); ?>>
 
                             <!-- Single Post
                         ============================================= -->
@@ -212,14 +212,14 @@
 
 
 
-                </div><!-- .postcontent end -->
+                        </div><!-- .postcontent end -->
 
 
-        <?php
-                        }
+                <?php
                     }
+                }
 
-        ?>
+                ?>
 
             </div>
 
